@@ -7,7 +7,6 @@ exports.view={
 };
 exports.news={
   pageSize:5,
-  serviceUrl : 'https://hacker-news.firebaseio.com/v0'  
 };
 exports.middleware=['robot','hello'];
 
