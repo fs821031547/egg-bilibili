@@ -27,9 +27,15 @@ exports.security = {
     // ctoken: false,
 }
 
+// exports.cors = {
+
+// };
 exports.cors={
+  enable: true,
+  package: 'egg-cors',
+  origin: '*',
   allowMethods:'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
-  credentials:true,
+  // credentials:true,
 }
 
 // 各分类内容

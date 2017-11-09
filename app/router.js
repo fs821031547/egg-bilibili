@@ -15,7 +15,7 @@ module.exports  = app =>{
   //   arr=arr.concat(Object.keys(router[i]));
   // }
   // console.log(arr);
-  app.use(convert(cors()));
+  // app.use(convert(cors()));
   // arr.forEach(x=>{
   //   app.get('/'+x,);
   // })

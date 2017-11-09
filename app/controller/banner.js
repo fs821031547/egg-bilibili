@@ -1,4 +1,5 @@
-
+const fs=require('fs')
+const request=require('request')
 module.exports= app =>{
   const { banner } = app.config;
   class HomeController extends app.Controller{
@@ -7,7 +8,12 @@ module.exports= app =>{
         method: 'GET',
         dataType: 'json',
       });
-      console.log('banner:',data);
+      // console.log('banner:',data);
+      
+      // data.data.data.forEach(x=>{
+      //   let url=x.pic.split('/')[5];
+      //   request(x.pic).pipe(fs.createWriteStream('./image/'+url))
+      // })
       this.ctx.body = data.data;
     }
   }
