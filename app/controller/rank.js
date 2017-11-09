@@ -1,13 +1,16 @@
-
-import { ranking3, ranking7, randking, rankbase } from './../urlConfig'
-
 module.exports= app =>{
+  
+  const {  ranking3  } = app.config;
+
   class HomeController extends app.Controller{
     // 排行
     // 三日排行
     async ranking3(ctx){
-      const data = await ctx.curl(ranking3);
-      this.ctx.body = data;
+      const data = await ctx.curl(ranking3,{
+        method: 'GET',
+        dataType: 'json',
+      });
+      this.ctx.body = data.data;
     }
     // // 一周排行
     // async ranking7(ctx){

@@ -1,11 +1,15 @@
-import { getSearchDefaultWords, topbg, hot, slideshow, season, recommend } from './../urlConfig'
+// import { getSearchDefaultWords, topbg, hot, slideshow, season, recommend } from './../urlConfig'
 
 module.exports= app =>{
+  const { getSearchDefaultWords, topbg, hot, slideshow, season, recommend } = app.config;
   class HomeController extends app.Controller{
     // 默认搜索词
     async search(ctx){
-      const data = await ctx.curl(getSearchDefaultWords);
-      this.ctx.body = data;
+      const data = await ctx.curl(getSearchDefaultWords,{
+        method: 'GET',
+        dataType: 'json',
+      });
+      this.ctx.body = data.data;
     }
     // 顶部背景图
     // async topbg(ctx){
